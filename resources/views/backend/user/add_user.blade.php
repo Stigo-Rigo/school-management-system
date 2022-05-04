@@ -31,41 +31,34 @@
                     <form method="POST" action="{{ route('users.store') }}" class="form-horizontal">
                         @csrf
 
-                            <div class="card-body">
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">User Role <span class="text-danger">*</span></label>
-                                   <div class="col-sm-9">
-                                        <select name="user_role" id="user_role" class="select2 form-control custom-select">
-                                            <option value="" selected="" disabled="">Select Role</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="Employee">Employee</option>
-                                            <option value="Student">Student</option>
-                                        </select>
-                                   </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="name" class="col-sm-3 text-right control-label col-form-label">Name<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="name" class="form-control" placeholder="Name Here">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="email" class="col-sm-3 text-right control-label col-form-label">Email<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
-                                        <input type="email" name="email" class="form-control" placeholder="Email here">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password" class="col-sm-3 text-right control-label col-form-label">Password<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
-                                        <input type="password" name="password" class="form-control" placeholder="Password here">
-                                    </div>
-                                </div>
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <input type="submit" value="Submit" class="btn btn-primary">
-                                </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="fname">User Role <span class="text-danger">*</span></label>
+                                <select name="user_role" id="user_role" class="select2 form-control custom-select">
+                                    <option value="" selected="" disabled="">Select Role</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Employee">Employee</option>
+                                    <option value="Student">Student</option>
+                                </select>
                             </div>
+                            <div class="form-group row">
+                                <label for="name">Name<span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control" placeholder="Name Here">
+                            </div>
+                            <div class="form-group row">
+                                <label for="email">Email<span class="text-danger">*</span></label>
+                                <input type="email" name="email" class="form-control" placeholder="Email here">
+                            </div>
+                            <div class="form-group row">
+                                <label for="password">Password<span class="text-danger">*</span></label>
+                                <input type="password" name="password" class="form-control" placeholder="Password here">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </div>
+                            
+                        </div>    
                     </form>
                 </div>
             </div>

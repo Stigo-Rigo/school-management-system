@@ -33,39 +33,29 @@
 
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">User Role <span class="text-danger">*</span></label>
-                                   <div class="col-sm-9">
+                                    <label for="fname">User Role <span class="text-danger">*</span></label>
                                         <select name="user_role" id="user_role" class="select2 form-control custom-select">
                                             <option value="" selected="" disabled="">Select Role</option>
                                             <option value="Admin">Admin</option>
                                             <option value="Employee">Employee</option>
                                             <option value="Student">Student</option>
                                         </select>
-                                   </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="name" class="col-sm-3 text-right control-label col-form-label">Name<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
+                                    <label for="name">Name<span class="text-danger">*</span></label>
                                         <input type="text" name="name" class="form-control" value="{{ $data->name }}">
-                                    </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="email" class="col-sm-3 text-right control-label col-form-label">Email<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
+                                    <label for="email">Email<span class="text-danger">*</span></label>
                                         <input type="email" name="email" class="form-control" value="{{ $data->email }}">
-                                    </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password" class="col-sm-3 text-right control-label col-form-label">Password<span class="text-danger">*</span></label>
-                                    <div class="col-sm-9">
+                                    <label for="password">Password<span class="text-danger">*</span></label>
                                         <input type="password" name="password" class="form-control" placeholder="Password here">
-                                    </div>
                                 </div>
-                            <div class="border-top">
-                                <div class="card-body">
+                                <div class="form-group">
                                     <input type="submit" value="Update" class="btn btn-primary">
                                 </div>
-                            </div>
                     </form>
                 </div>
             </div>

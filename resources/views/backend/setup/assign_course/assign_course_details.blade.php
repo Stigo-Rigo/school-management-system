@@ -1,6 +1,5 @@
 @extends('admin.admin_master')
 @section('admin')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="page-wrapper">
     <!-- ============================================================== -->
@@ -9,10 +8,10 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Change Password</h4>
-                <!-- <div class="ml-auto text-right">
-                    <a href="#" class="btn btn-primary">Add User</a>
-                </div> -->
+                <h4 class="page-title">Course Assignment Details</h4>
+                <div class="ml-auto text-right">
+                    <a href="{{ route('assign.course.add') }}" class="btn btn-primary">Assign Course</a>
+                </div>
             </div>
         </div>
     </div>
@@ -29,39 +28,36 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    
-                    <form method="POST" action="{{ route('password.update') }}">
-                    @csrf 
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Current Password <span class="text-danger">*</span></label>
-                                <input name="oldpassword" type="password" class="form-control" id="current_password">
-                                @error('oldpassword')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>New Password <span class="text-danger">*</span></label>
-                                <input name="password" type="password" class="form-control" id="password">
-                                @error('password')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password <span class="text-danger">*</span></label>
-                                <input name="password_confirmation" type="password" class="form-control" id="password_confirmation">
-                                @error('password_confirmation')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="border-top">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <h6 class="card-title"><strong>Class: </strong>{{ $details['0']['student_class']['name'] }}</h4>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">SL</th>
+                                        <th width="20%">Subject</th>
+                                        <th width="20%">Full Mark</th>
+                                        <th width="20%">Pass Mark</th>
+                                        <th width="20%">Subjective Mark</th>
+                                        <th width="20%">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($details as $key => $detail)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $detail['school_course']['name'] }}</td>
+                                        <td>{{ $detail->full_mark }}</td>
+                                        <td>{{ $detail->pass_mark }}</td>
+                                        <td>{{ $detail->subjective_mark }}</td>
+                                        <td>{{ $detail->amount }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +78,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center">
+    <footer class="footer text-center ">
         All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://twitter.com/JayeMustick">Stigo Rigo</a>.
     </footer>
     <!-- ============================================================== -->
@@ -91,4 +87,3 @@
 </div>
 
 @endsection
-

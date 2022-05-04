@@ -34,7 +34,7 @@
                             <table id="zero_config" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th width="5%">ID</th>
+                                        <th width="5%">SL</th>
                                         <th>Role</th>
                                         <th>Name</th>
                                         <th>Email</th>

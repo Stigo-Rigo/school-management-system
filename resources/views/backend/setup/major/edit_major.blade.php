@@ -1,6 +1,5 @@
 @extends('admin.admin_master')
 @section('admin')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="page-wrapper">
     <!-- ============================================================== -->
@@ -9,7 +8,7 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Change Password</h4>
+                <h4 class="page-title">Edit Major</h4>
                 <!-- <div class="ml-auto text-right">
                     <a href="#" class="btn btn-primary">Add User</a>
                 </div> -->
@@ -29,35 +28,19 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    
-                    <form method="POST" action="{{ route('password.update') }}">
+
+                    <form method="POST" action="{{ route('student.major.update', $data->id) }}">
                     @csrf 
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Current Password <span class="text-danger">*</span></label>
-                                <input name="oldpassword" type="password" class="form-control" id="current_password">
-                                @error('oldpassword')
+                                <label>Major <span class="text-danger">*</span></label>
+                                <input name="name" type="text" class="form-control" id="name" value="{{ $data->name }}">
+                                @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>New Password <span class="text-danger">*</span></label>
-                                <input name="password" type="password" class="form-control" id="password">
-                                @error('password')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password <span class="text-danger">*</span></label>
-                                <input name="password_confirmation" type="password" class="form-control" id="password_confirmation">
-                                @error('password_confirmation')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="border-top">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
+                            <div class="pb-5">
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -91,4 +74,3 @@
 </div>
 
 @endsection
-
